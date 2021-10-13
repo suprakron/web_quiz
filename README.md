@@ -7,7 +7,10 @@ quiz system formative assesment
 
 ***คำสั่งรันโปรแกรม 
 เปลี่ยนเปลี่ยนฐานข้อมูล
+
+
 - python manage.py makemigrations 
+
 ***
 - python manage.py migrate
 
