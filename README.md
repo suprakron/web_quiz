@@ -6,6 +6,9 @@ quiz system formative assesment
 # คำสั่ง runserver
 
 ***คำสั่งรันโปรแกรม 
+
+*** สร้าง envaroment
+- python -m venv env
 เปลี่ยนเปลี่ยนฐานข้อมูล
 
 
