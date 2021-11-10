@@ -1,0 +1,426 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Teacher Panel | John Doe</title>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{% static 'static/assets/css/teacher_dashboard.css' %}">
+
+
+</head>
+<body>
+
+    <div id="sidebar">
+        <div id="sidebar-header"  class="d-flex flex-column align-items-center">
+            <img src="img/profile.jpg" class="mb-3 img-fluid rounded-circle" id="profile-img">
+            <h1 class="mb-3">Welcome, John <a class="text-white" data-toggle="collapse" data-target="#sidebar-dropdown"> <i class="ml-2 fas fa-caret-down"></i></a></h1>
+            <div id="sidebar-dropdown" class="collapse">
+                <a href="/" class="d-block text-left lead text-white"><i class="fas fa-sign-out-alt mb-1 mr-3"></i>Logout</a>
+                <a href="/" class="d-block text-left lead text-white"><i class="fas fa-id-badge mt-2 mr-3"></i>View Profile</a>
+                <a href="/" class="lead text-white"><i class="fas fa-user-edit mb-2 mr-3"></i>Edit Profile</a>
+            </div>
+            <hr>
+        </div>
+        <div id="sidebar-menu">
+            <a href="#dashboard" class="sidebar-menu-item">
+                <i class="fas fa-2x fa-home"></i>
+                <p class="menu-item-label lead">Dashboard</p>
+            </a>
+            <a href="#courses" class="sidebar-menu-item">
+                <i class="fas fa-2x fa-chalkboard-teacher"></i>
+                <p class="menu-item-label lead">Courses</p>
+            </a>
+            <a href="#calender" class="sidebar-menu-item">
+                <i class="far fa-2x fa-calendar-alt"></i>
+                <p class="menu-item-label lead">Calender</p>
+            </a>
+           
+        </div>
+    </div>
+
+    <div id="content">
+        <button id="menu-button" class="mb-4 btn btn-outline-info"><i class="mr-2 fas fa-bars"></i>Menu</button>
+        <div id="dashboard" class="content-section">
+            <h1 class="display-3 mb-0">
+                Welcome to your Dashboard
+            </h1>    
+            <hr class="mt-1 mb-5">
+            <div class="row">
+                <div class="col-xl-8 dash-card" id="messages">
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning">
+                            <h2 class="mb-0">Messages</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="message lead">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates itaque similique nihil voluptatum dicta, voluptatem voluptatibus, ex neque quae suscipit dolores impedit exercitationem officiis at eum eos nostrum ipsa?
+                            </div>
+                            <hr>
+                            <div class="message lead">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates itaque similique nihil voluptatum dicta, voluptatem voluptatibus, ex neque quae suscipit dolores impedit exercitationem officiis at eum eos nostrum ipsa?
+                            </div>
+                            <hr>
+                            <div class="message lead">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate voluptates itaque similique nihil voluptatum dicta, voluptatem voluptatibus, ex neque quae suscipit dolores impedit exercitationem officiis at eum eos nostrum ipsa?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="row">
+                        <div class="col-sm-6 col-xl-12">
+                            <div class="card mb-4">
+                                <div class="card-header bg-info text-white">
+                                    <h2 class="mb-0">Classes</h2>
+                                </div>
+                                <div class="card-body">
+                                    <p class="lead">
+                                        <strong>Total Courses : </strong> 3
+                                    </p>
+                                    <p class="lead">
+                                        <strong>Total Students : </strong> 42
+                                    </p>
+                                    <p class="lead">
+                                        <strong>Classes Taught : </strong> 10 Classes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-sm-6">
+                            <div class="card mb-4">
+                                <div class="card-header bg-danger text-white">
+                                    <h2 class="mb-0">Classes</h2>
+                                </div>
+                                <div class="card-body">
+                                    <p class="lead">
+                                        <strong>Total Courses : </strong> 3
+                                    </p>
+                                    <p class="lead">
+                                        <strong>Total Students : </strong> 42
+                                    </p>
+                                    <p class="lead">
+                                        <strong>Classes Taught : </strong> 10 Classes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="courses" class="content-section">
+            <h1 class="display-3 mt-5 mb-0">Your Courses</h1>
+            <hr class="mt-1 mb-5">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="card mb-4 p-0">
+                        <div class="card-header p-0">
+                            <img src="img/class.jpg" alt="" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <h2>Class Name</h2>
+                            <p class="lead"><strong>Topic : </strong>Art & Craft</p>
+                            <p class="lead"><strong>Number of students : </strong>28</p>
+                            <p class="lead"><strong>Age Group : </strong>8-14</p>
+                            <a href="/" class="mt-3 lead btn btn-outline-success">View Class Page</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="card mb-4 p-0">
+                        <div class="card-header p-0">
+                            <img src="img/dance.jpeg" alt="" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <h2>Class Name</h2>
+                            <p class="lead"><strong>Topic : </strong>Dance</p>
+                            <p class="lead"><strong>Number of students : </strong>19</p>
+                            <p class="lead"><strong>Age Group : </strong>5-10</p>
+                            <a href="/" class="mt-3 lead btn btn-outline-success">View Class Page</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-xl-3">
+                    <div class="card mb-4 p-0">
+                        <div class="card-header p-0">
+                            <img src="img/yoga.jpeg" alt="" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <h2>Class Name</h2>
+                            <p class="lead"><strong>Topic : </strong>Yoga</p>
+                            <p class="lead"><strong>Number of students : </strong>10</p>
+                            <p class="lead"><strong>Age Group : </strong>5-8</p>
+                            <a href="/" class="mt-3 lead btn btn-outline-success">View Class Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="my-4 p-3 btn btn-lg btn-primary" id="add-class-btn"> <i class="fa fa-plus"></i> Add new course</a>
+        </div>
+        <div id="calender" class="content-section">
+            <h1 class="display-3 mt-5 mb-0">Calender</h1>
+            <hr class="mt-1 mb-5">
+            <div id="schedule" class="row">
+                <div class="col-xl-6">
+                    <div id="upcoming">
+                        <div class="table-head bg-warning text-white p-3">
+                            <h1 class="m-0">
+                                Upcoming Classes
+                            </h1>
+                        </div>
+                        <div class="table-content">
+                            <div class="table-row">
+                                <h3 class="">Class Name</h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <p class="lead"> <strong>Date :</strong>   15 July, Friday</p>
+                                        <p class="lead"><strong>Time :</strong> 10:30AM </p>
+                                    </div>
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students enrolled</a>
+                                        <p class="m-0 text-right"><a href="/" class="lead">4 demo students</a></p>
+                                    </div>
+                                </div>
+                                <div class="table-row-inner">
+                                    <a href="/" class="table-data lead">
+                                        <i class="mr-sm-2 far text-danger fa-envelope"></i>
+                                        Send Mail
+                                    </a>
+                                    <p class="m-0">
+                                        <a href="/" class="lead">
+                                            <i class="fas fa-comment-dots"></i>
+                                                Send SMS
+                                        </a>
+                                    </p>
+                                    <p class="m-0"><a href="/" class="lead">
+                                        <i class="mr-sm-2 fab text-success  fa-whatsapp"></i>
+                                        Whatsapp message
+                                    </a></p>
+                                </div>
+                                <div class="table-row-inner mb-0">
+                                    <a href="/" class="mb-0 table-data btn btn-outline-success">Link</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-primary">Invite Students</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-danger">Cancel Class</a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <h3 class="">Class Name</h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <p class="lead"> <strong>Date :</strong>   15 July, Friday</p>
+                                        <p class="lead"><strong>Time :</strong> 10:30AM </p>
+                                    </div>
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students enrolled</a>
+                                        <p class="m-0 text-right"><a href="/" class="lead">4 demo students</a></p>
+                                    </div>
+                                </div>
+                                <div class="table-row-inner">
+                                    <a href="/" class="table-data lead">
+                                        <i class="mr-sm-2 far text-danger fa-envelope"></i>
+                                        Send Mail
+                                    </a>
+                                    <p class="m-0">
+                                        <a href="/" class="lead">
+                                            <i class="fas fa-comment-dots"></i>
+                                                Send SMS
+                                        </a>
+                                    </p>
+                                    <p class="m-0"><a href="/" class="lead">
+                                        <i class="mr-sm-2 fab text-success  fa-whatsapp"></i>
+                                        Whatsapp message
+                                    </a></p>
+                                </div>
+                                <div class="table-row-inner mb-0">
+                                    <a href="/" class="mb-0 table-data btn btn-outline-success">Link</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-primary">Invite Students</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-danger">Cancel Class</a>
+                                </div>
+                            </div><div class="table-row">
+                                <h3 class="">Class Name</h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <p class="lead"> <strong>Date :</strong>   15 July, Friday</p>
+                                        <p class="lead"><strong>Time :</strong> 10:30AM </p>
+                                    </div>
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students enrolled</a>
+                                        <p class="m-0 text-right"><a href="/" class="lead">4 demo students</a></p>
+                                    </div>
+                                </div>
+                                <div class="table-row-inner">
+                                    <a href="/" class="table-data lead">
+                                        <i class="mr-sm-2 far text-danger fa-envelope"></i>
+                                        Send Mail
+                                    </a>
+                                    <p class="m-0">
+                                        <a href="/" class="lead">
+                                            <i class="fas fa-comment-dots"></i>
+                                                Send SMS
+                                        </a>
+                                    </p>
+                                    <p class="m-0"><a href="/" class="lead">
+                                        <i class="mr-sm-2 fab text-success  fa-whatsapp"></i>
+                                        Whatsapp message
+                                    </a></p>
+                                </div>
+                                <div class="table-row-inner mb-0">
+                                    <a href="/" class="mb-0 table-data btn btn-outline-success">Link</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-primary">Invite Students</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-danger">Cancel Class</a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <h3 class="">Class Name</h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <p class="lead"> <strong>Date :</strong>   15 July, Friday</p>
+                                        <p class="lead"><strong>Time :</strong> 10:30AM </p>
+                                    </div>
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students enrolled</a>
+                                        <p class="m-0 text-right"><a href="/" class="lead">4 demo students</a></p>
+                                    </div>
+                                </div>
+                                <div class="table-row-inner">
+                                    <a href="/" class="table-data lead">
+                                        <i class="mr-sm-2 far text-danger fa-envelope"></i>
+                                        Send Mail
+                                    </a>
+                                    <p class="m-0">
+                                        <a href="/" class="lead">
+                                            <i class="fas fa-comment-dots"></i>
+                                                Send SMS
+                                        </a>
+                                    </p>
+                                    <p class="m-0"><a href="/" class="lead">
+                                        <i class="mr-sm-2 fab text-success  fa-whatsapp"></i>
+                                        Whatsapp message
+                                    </a></p>
+                                </div>
+                                <div class="table-row-inner mb-0">
+                                    <a href="/" class="mb-0 table-data btn btn-outline-success">Link</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-primary">Invite Students</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-danger">Cancel Class</a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <h3 class="">Class Name</h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <p class="lead"> <strong>Date :</strong>   15 July, Friday</p>
+                                        <p class="lead"><strong>Time :</strong> 10:30AM </p>
+                                    </div>
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students enrolled</a>
+                                        <p class="m-0 text-right"><a href="/" class="lead">4 demo students</a></p>
+                                    </div>
+                                </div>
+                                <div class="table-row-inner">
+                                    <a href="/" class="table-data lead">
+                                        <i class="mr-sm-2 far text-danger fa-envelope"></i>
+                                        Send Mail
+                                    </a>
+                                    <p class="m-0">
+                                        <a href="/" class="lead">
+                                            <i class="fas fa-comment-dots"></i>
+                                                Send SMS
+                                        </a>
+                                    </p>
+                                    <p class="m-0"><a href="/" class="lead">
+                                        <i class="mr-sm-2 fab text-success  fa-whatsapp"></i>
+                                        Whatsapp message
+                                    </a></p>
+                                </div>
+                                <div class="table-row-inner mb-0">
+                                    <a href="/" class="mb-0 table-data btn btn-outline-success">Link</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-primary">Invite Students</a>
+                                    <a href="/" class="mb-0 table-data btn btn-outline-danger">Cancel Class</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-footer py-3 bg-warning">
+                            <p class="mb-0 text-center">
+                                <a href="#" class="text-dark lead"><i class="mr-2 fas fa-list-ul"></i>View all upcoming classes</a>                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div id="past">
+                        <div class="table-head bg-danger text-white p-3">
+                            <h2 class="m-0">Past Classes</h2>
+                        </div>
+                        <div class="table-content">
+                            <div class="table-row">
+                                <h3 class="">Class Name <span class="ml-1 ml-md-3 lead">(8 July, Friday, 4:00PM)</span></h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students attended</a>
+                                    </div>
+                                    <div>
+                                        <p class="lead">Earnings : 5000</p>
+                                    </div>                                 
+                                    <a href="/" class="table-data btn btn-outline-success">Assessment</a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <h3 class="">Class Name <span class="ml-1 ml-md-3 lead">(8 July, Friday, 4:00PM)</span></h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students attended</a>
+                                    </div>
+                                    <div>
+                                        <p class="lead">Earnings : 5000</p>
+                                    </div>                                 
+                                    <a href="/" class="table-data btn btn-outline-success">Assessment</a>
+                                </div>
+                            </div>
+                            <div class="table-row">
+                                <h3 class="">Class Name <span class="ml-1 ml-md-3 lead">(8 July, Friday, 4:00PM)</span></h3>
+                                <hr class="m-0 mb-3">
+                                <div class="table-row-inner">
+                                    <div>
+                                        <a href="/" class="table-data lead">10 students attended</a>
+                                    </div>
+                                    <div>
+                                        <p class="lead">Earnings : 5000</p>
+                                    </div>                                 
+                                    <a href="/" class="table-data btn btn-outline-success">Assessment</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-footer py-3 bg-danger">
+                            <p class="mb-0 text-center">
+                                <a href="#" class="text-white lead"> <i class="mr-2 fas fa-list-ul"></i>View all past classes</a>                
+                            </p>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="{% static '/static/assets/js/teacher_dashboard.js' %}"></script>    
+    
+</body>
+</html>

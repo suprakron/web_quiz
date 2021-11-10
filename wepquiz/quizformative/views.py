@@ -104,6 +104,12 @@ def lecturer(request):
     else:
         return HttpResponse("ครู <a href='/logout'>Logout</a>")
 
+#################################หน้าหลักครู###########################################
+
+def teacher_dashboard(request):
+    return render(request, 'page/teacher/teacherdashboard.html')
+
+
 
 def logout_view(request):
     auth.logout(request)
