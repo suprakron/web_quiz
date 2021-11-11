@@ -18,8 +18,8 @@ def register_optionsform(request):
     return render(request, 'page/register_options.html')
 
 
-def registerform__lecturer(request):
-    return render(request, 'page/registerform_lecturer.html')
+def registerform__teacher(request):
+    return render(request, 'page/registerform_teacher.html')
 
 
 def registerform_student(request):
