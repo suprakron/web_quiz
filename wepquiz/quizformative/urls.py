@@ -11,6 +11,7 @@ urlpatterns = [
     path('registerstudent/', views.registerstudent, name="registerstudent"),
     path('registerteacher/', views.registerteacher, name="registerteacher"),
     path('teacher/',views.teacher_dashboard, name="teacher_dashboard"),
+    path('student/',views.student_dashboard, name="student_dashboard"),
     path('login/', views.login, name="login"),
     path('student/', views.student, name="student"),
     path('teacher/', views.teacher, name="teacher"),

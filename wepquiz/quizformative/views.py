@@ -110,6 +110,10 @@ def teacher_dashboard(request):
     return render(request, 'page/teacher/teacherdashboard.html')
 
 
+def student_dashboard(request):
+    return render(request, 'page/student/studentdashboard.html')
+
+
 
 def logout_view(request):
     auth.logout(request)
