@@ -1,10 +1,6 @@
-{%extends 'layout/layouthomt.html' %}
-{% load static %}
+{%extends 'layout/layouthomt.html' %} {% load static %} {% block content %}
 
 
-{% block content %}
-
- 
 <div class="preloader">
     <div class="loader">
         <div class="ytp-spinner">
@@ -21,7 +17,7 @@
         </div>
     </div>
 </div>
- 
+
 
 <!-- ========================= ส่วนหัว ========================= -->
 <header class="header">
@@ -33,9 +29,7 @@
                         <a class="" href="/">
                             <img src="{% static 'assets/img/logo/logo-1.png' %}" alt="Logo" />
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
                             <span class="toggler-icon"></span>
@@ -53,7 +47,7 @@
                                 <li class="nav-item">
                                     <a class="" href="/register_optionsForm">ลงทะเบียน</a>
                                 </li>-->
-                              
+
                             </ul>
                         </div>
                         <!-- navbar collapse -->
@@ -87,14 +81,12 @@
                                             {% csrf_token %}
                                             <div class="form-label-group">
                                                 <label for="inputEmail">อีเมลล์</label>
-                                                <input type="email" id="inputEmail" class="form-control"
-                                                    placeholder="Email address" required autofocus>
+                                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                                             </div>
 
                                             <div class="form-label-group">
                                                 <label for="">รหัสผ่าน</label>
-                                                <input type="password" class="form-control" placeholder="Password"
-                                                    name="password" id="inputPassword">
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="inputPassword">
 
                                             </div>
 
@@ -106,15 +98,13 @@
 
 
                                             <div class="d-grid gap-2">
-                                                <button class="btn btn-lg btn-primary btn-block text-uppercase"
-                                                    type="submit">เข้าสู่ระบบ</button>
+                                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">เข้าสู่ระบบ</button>
                                             </div>
 
                                             <hr class="my-4">
                                         </form>
                                         <div class="d-grid gap-lg-2 mb-70">
-                                            <button class="btn btn-lg btn-google btn-block text-uppercase"
-                                            type="submit"><img
+                                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><img
                                                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
                                                 alt="" srcset="" width="30"> เข้าสู่ระบบด้วย Google</button>
                                         </div>
@@ -142,7 +132,7 @@
 
 {% block javascript %}
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         $("#userinfoform").validate({
             rules: {
@@ -169,7 +159,7 @@
 
             },
 
-            submitHandler: function (form) {
+            submitHandler: function(form) {
                 $.ajax({
                     method: 'POST',
                     url: "{% url 'login' %}",
@@ -178,7 +168,7 @@
                         password: $('#inputPassword').val(),
                         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
                     },
-                    success: function (response) {
+                    success: function(response) {
                         Swal.fire(
                             'success',
                             'สำเร็จ',
@@ -187,13 +177,12 @@
 
                             if (response.groups === "student") {
                                 location.replace("{% url 'student' %}");
-                            }
-                            else if (response.groups === "lecturer") {
-                                location.replace("{% url 'lecturer' %}");
+                            } else if (response.groups === "teacher") {
+                                location.replace("{% url 'teacher' %}");
                             }
                         })
                     },
-                    error: function (response) {
+                    error: function(response) {
 
                         Swal.fire({
                             icon: 'error',
@@ -209,6 +198,5 @@
 
         });
     });
-
 </script>
 {% endblock %}

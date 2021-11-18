@@ -48,7 +48,7 @@ def registerstudent(request):
             return JsonResponse({"success": "success"}, status=200)
 
 
-def registerlecturer(request):
+def registerteacher(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -62,7 +62,7 @@ def registerlecturer(request):
         else:
             user = User.objects.create_user(
                 username=username, password=password, email=email)
-            user_group = Group.objects.get(name='lecturer')
+            user_group = Group.objects.get(name='teacher')
             user.groups.add(user_group)
             return JsonResponse({"success": "success"}, status=200)
 
@@ -80,10 +80,10 @@ def login(request):
                     print("นักเรียน")
                     auth.login(request, user)
                     return JsonResponse({"groups": "student"}, status=200)
-                elif user.groups.filter(name='lecturer').exists():
+                elif user.groups.filter(name='teacher').exists():
                     print("ครู")
                     auth.login(request, user)
-                    return JsonResponse({"groups": "lecturer"}, status=200)
+                    return JsonResponse({"groups": "teacher"}, status=200)
             else:
                 return JsonResponse({"errors": "รหัสผ่านผิดพลาด"}, status=403)
         else :
@@ -98,7 +98,7 @@ def student(request):
         return HttpResponse("นักเรียน <a href='/logout'>Logout</a>")
 
 
-def lecturer(request):
+def teacher(request):
     if not request.user.is_authenticated:
         return redirect('/loginForm')
     else:
