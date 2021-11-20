@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background: #f1f2f7;
+    background: #D6F9F9;
     font-family: "Open Sans", arial, sans-serif;
     color: darkslategray;
 }
@@ -29,14 +29,14 @@ body.login {
 /* general utility classes */
 
 .warn {
-    color: lightsalmon;
+    color: rgb(87, 30, 8);
 }
 
 
 /* header */
 
 header[role=banner] {
-    background: white;
+    background: #57BDE6;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -86,7 +86,7 @@ header[role=banner] .utilities li a {
 }
 
 nav[role=navigation] {
-    background: #2a3542;
+    background: #457D8E;
     color: #ddd;
     /* icons */
 }

@@ -176,9 +176,9 @@
                         ).then((result) => {
 
                             if (response.groups === "student") {
-                                location.replace("{% url 'student' %}");
+                                location.replace("{% url 'student_dashboard' %}");
                             } else if (response.groups === "teacher") {
-                                location.replace("{% url 'teacher' %}");
+                                location.replace("{% url 'teacher_dashboard' %}");
                             }
                         })
                     },

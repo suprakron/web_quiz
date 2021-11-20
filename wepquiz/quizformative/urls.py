@@ -3,19 +3,28 @@ from . import views
 
 
 urlpatterns = [
-   path('', views.index, name='home'),
+    path('', views.index, name='home'),
     path('loginForm/', views.loginform, name='loginform'),
     path('register_optionsForm/', views.register_optionsform,name="register_optionsForm"),
-    path('registerform__teacher/', views.registerform__teacher),
-    path('registerform_student/', views.registerform_student),
-    path('registerstudent/', views.registerstudent, name="registerstudent"),
-    path('registerteacher/', views.registerteacher, name="registerteacher"),
-    path('teacher/',views.teacher_dashboard, name="teacher_dashboard"),
-    path('student/',views.student_dashboard, name="student_dashboard"),
-    path('login/', views.login, name="login"),
-    path('student/', views.student, name="student"),
-    path('teacher/', views.teacher, name="teacher"),
+    path('registerform__teacher/', views.registerform__teacher),                #หน้าลงทะเบียนของครู
+    path('registerform_student/', views.registerform_student),                  #หน้าลงทะเบียนของนักเรียน
+    path('registerstudent/', views.registerstudent, name="registerstudent"),     #ฟังก์ชั่นลงทะเบียนของนักเรียน
+    path('registerteacher/', views.registerteacher, name="registerteacher"),  #ฟังก์ชั่นลงทะเบียนของนักเรียน
+   
+    path('login/', views.login, name="login"),                                 #ฟังก์ชั่นหน้าlogin
+
+    path('teacher/',views.teacher_dashboard, name="teacher_dashboard"),       #หน้าหลักของครู
+    path('create_quiz/',views.create_quiz, name="create_quiz"),                 #หน้าสร้างแบบทดสอบ
+    path('reply_score/', views.reply_score, name="reply_score"),
+
+
+
+
+
+    path('student/',views.student_dashboard, name="student_dashboard"),       #หน้าหลักของนักเรียน
+    path('view_score/',views.view_scores, name="viewscore"),
+    path('doing_quiz/',views.doing_quiz, name="doing_quiz"),
+  
     path('logout/',views.logout_view ,name="logout")
 ]
-
-
+ 

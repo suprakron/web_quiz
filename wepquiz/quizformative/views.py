@@ -90,28 +90,39 @@ def login(request):
             return JsonResponse({"errors": "ไม่มีอีเมลล์ นี้ในระบบ"}, status=403)
 
 
-def student(request):
+#################################หน้าหลักนักเรียน###########################################
+def student_dashboard(request):
     # return HttpResponse('student')
     if not request.user.is_authenticated:
         return redirect('/loginForm')
     else:
-        return HttpResponse("นักเรียน <a href='/logout'>Logout</a>")
+        return render(request, 'dashboard/studentdashboard.html')
+
+def view_scores(request):
+    return render(request, 'page/student/view_score.html')
+
+def doing_quiz(request):
+    return render(request, 'page/student/doing_quiz.html')
 
 
-def teacher(request):
-    if not request.user.is_authenticated:
-        return redirect('/loginForm')
-    else:
-        return HttpResponse("ครู <a href='/logout'>Logout</a>")
 
 #################################หน้าหลักครู###########################################
 
 def teacher_dashboard(request):
-    return render(request, 'page/teacher/teacherdashboard.html')
+    if not request.user.is_authenticated:
+        return redirect('/loginForm')
+    else:
+        return render(request, 'dashboard/teacherdashboard.html')
+
+def create_quiz(request):
+    return render(request, 'page/teacher/create_quiz.html')
+
+def reply_score(request):
+    return render(request, 'page/teacher/reply_score.html')
 
 
-def student_dashboard(request):
-    return render(request, 'page/student/studentdashboard.html')
+
+ 
 
 
 
