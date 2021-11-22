@@ -123,9 +123,6 @@ def reply_score(request):
 
 
  
-
-
-
 def logout_view(request):
     auth.logout(request)
     return redirect('/loginForm')
