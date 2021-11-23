@@ -1,53 +1,95 @@
-{%extends 'dashboard/teacherdashboard.html' %}
 {% load static %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en" class="dashboard">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Teacherdash_board</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <link rel="stylesheet" href="{% static 'assets/css/create_quiz.css' %}" />
+</head>
+
+<body>
+  <header role="banner">
+    <a href="{% url 'teacher_dashboard' %}">
+      <h1>Teacherdash_board</h1>
+    </a>
 
 
-<section class="panel important">
-  <h2> create quiz</h2>
-  <form action="#">
-    <div class="twothirds">
+    <ul class="utilities">
+      <li class="users"><a href="#">My Account</a></li>
+      <li class="logout warn"><a href="/logout">Logout</a></li>
+    </ul>
+  </header>
 
-      <label for="select-choice">Select Dropdown Choice:</label>
-      <select name="select-choice" id="select-choice">
-        <option value="Choice 1">Choice 1</option>
-        <option value="Choice 2">Choice 2</option>
-        <option value="Choice 3">Choice 3</option>
-      </select>
+  <nav role="navigation">
+    <ul class="main">
+      <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
+      <li class="write"><a href="#">แบบทดสอบ</a></li>
+      <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
+      <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
+      <!-- <li class="users"><a href="#">Manage Users</a></li> -->
+    </ul>
+  </nav>
 
-      <label for="name">Text Input:</label>
-      <input type="text" name="name" id="name" placeholder="John Smith" />
+  <main role="main">
 
-      <label for="textarea">Textarea:</label>
-      <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-    </div>
+    <section class="panel important">
 
-    <legend>Radio Button Choice</legend>
+      <form action="#">
+        <div class="twothirds">
+          <label for="select-choice">แนวทางด้านพุทธิพิสัย</label>
+          <select name="select-choice" id="select-choice">
+            <option value="Choice 1"> </option>
+            <option value="Choice 2">จำ</option>
+            <option value="Choice 3">เข้าใจ</option>
+            <option value="Choice 4">ประยุกต์ใช้</option>
+            <option value="Choice 5">วิเคราะห์</option>
+            <option value="Choice 6">ประเมินค่า</option>
+            <option value="Choice 7">สร้างสรรค์</option>
+            
+          </select>
 
-    <label for="radio-choice-1">
-      <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
-      Choice 1
-    </label>
+          <label for="name">Text Input:</label>
+          <input type="text" name="name" id="name" placeholder="John Smith" />
 
-    <label for="radio-choice-2">
-      <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
-      Choice 2
-    </label>
+        
+        </div>
 
-  
-    <div>
-      <label for="checkbox">
-        <input type="checkbox" name="checkbox" id="checkbox" /> Checkbox
-      </label>
-    </div>
+        <legend>Radio Button Choice</legend>
 
-    <div class="onethird">
-     
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-    </div>
-  </form>
-</section>
+        <label for="radio-choice-1">
+          <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
+          Choice 1
+        </label>
 
-{% endblock%}
+        <label for="radio-choice-2">
+          <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
+          Choice 2
+        </label>
+
+
+        <div>
+          <label for="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox" /> Checkbox
+          </label>
+        </div>
+
+        <div class="onethird">
+
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

@@ -55,12 +55,12 @@ header[role=banner] h1:before {
 
 header[role=banner] .utilities {
     width: 100%;
-    background: rgb(5, 13, 20);
+    background: slategray;
     color: #ddd;
 }
 
 header[role=banner] .utilities li {
-    border-bottom: solid 1px rgba(87, 79, 79, 0.2);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 }
 
 header[role=banner] .utilities li a {
@@ -156,12 +156,12 @@ footer[role=contentinfo] {
 /* panels */
 
 .panel {
-    background-color: white;
-    color: darkslategray;
-    -webkit-border-radius: 0.3rem;
-    -moz-border-radius: 0.3rem;
-    -ms-border-radius: 0.3rem;
-    border-radius: 0.3rem;
+    background-color: rgb(64, 80, 102);
+    color: rgb(165, 202, 202);
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius:1rem;
+    border-radius: 1rem;
     margin: 1%;
 }
 

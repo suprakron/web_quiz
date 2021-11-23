@@ -14,7 +14,7 @@
 
 <body>
     <header role="banner">
-        <a href="#">
+        <a href="{% url 'teacher_dashboard' %}">
             <h1>Teacherdash_board</h1>
         </a>
        
@@ -29,8 +29,8 @@
         <ul class="main">
             <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
             <li class="write"><a href="#">แบบทดสอบ</a></li>
-            <li class="edit"><a href="#">สร้างแบบทดสอบ</a></li>
-            <li class="comments"><a href="#">ตอบกลับคะแนน</a></li>
+            <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
+            <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
             <!-- <li class="users"><a href="#">Manage Users</a></li> -->
         </ul>
     </nav>

@@ -19,8 +19,6 @@ urlpatterns = [
 
 
 
-
-
     path('student/',views.student_dashboard, name="student_dashboard"),       #หน้าหลักของนักเรียน
     path('view_score/',views.view_scores, name="viewscore"),
     path('doing_quiz/',views.doing_quiz, name="doing_quiz"),
