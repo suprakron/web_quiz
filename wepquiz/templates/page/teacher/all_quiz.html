@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <link rel="stylesheet" href="{% static 'assets/css/teacher_dashboard.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/all_quiz.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/view_score.css' %}" />
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <a href="{% url 'teacher_dashboard' %}">
             <h1>Teacherdash_board</h1>
         </a>
-       
+
 
         <ul class="utilities">
             <li class="users"><a href="#">My Account</a></li>
@@ -34,10 +35,20 @@
             <!-- <li class="users"><a href="#">Manage Users</a></li> -->
         </ul>
     </nav>
-
-    <main role="main">{% block content %} {% endblock %}</main>
-
-    <script src="./script.js"></script>
+    <main role="main">
+        <a href="#">    <section class="box">
+            <div class="boxscore">
+                <div class="row">
+                    <div class="column">
+                            <label align="left">
+                                <h2 class="text"> คณิตศาสตร์</h2><br>
+                                <h3 class="text">แบบทดสอบ ชื่อ จำนวนนับ</h3>
+                            </label>
+                    </div>
+                </div>
+            </div>
+        </section> </a>
+      
+    </main>
 </body>
-
 </html>
