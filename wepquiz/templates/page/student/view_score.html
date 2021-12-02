@@ -7,12 +7,12 @@
     <title> student_dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+ 
     <link rel="stylesheet" href="{% static 'assets/css/student_dashboard.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/view_score.css' %}" />
-</head>
 
+</head>
+<script src="https://cdn.plot.ly/plotly-1.19.1.min.js"></script>
 <body>
     <header role="banner">
         <a href="{% url 'student_dashboard' %}">
@@ -26,50 +26,18 @@
         </ul>
     </header>
 
-    <nav role="navigation">
-        <ul class="main">
-            <li class="write"><a href="{% url 'doing_quiz' %}">แบบทดสอบ</a></li>
-            <li class="comments"><a href="{% url 'viewscore' %}">คะแนนแบบทดสอบ</a></li>
-        </ul>
-    </nav>
-
     <main role="main">
-
-        <section class="box">
-            <div class="boxscore">
-                <div class="row">
-                    <div class="column">
-                        <label align="left">
-                            <h2 class="text"> คณิตศาสตร์</h2>
-                        </label>
-                        <label align="right">
-                            <h2 class="text"> 100/100</h2>
-                        </label>
-                    </div>
-
-                </div>
-
-            </div>
+        <section class="textli">
+        <h1>คะแนนแบบทดสอบในแต่ละข้อ</h1>
         </section>
-
-        <section class="text-center">
-            <div class="box">
-                <div class="boxscore2">
-                    <div class="row">
-                        <div class="column">
-                            <label align="left">
-                                <h2 class="text"> ภาษาไทย</h2>
-                            </label>
-                            <label align="right">
-                                <h2 class="text"> 100/100</h2>
-                            </label>
-                        </div>
-
-                    </div>
-                </div>
+        <div class="main1">
+            <div class="container">
+                <div id="graph"></div>
             </div>
-        </section>
+        </div>
+       
     </main>
 </body>
-
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script  src="{% static 'assets/js/viewscore.js' %}"></script>
 </html>

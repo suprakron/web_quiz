@@ -4,27 +4,25 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>reply_score</title>
+  <title>Teacherdash_board</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-
+  <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <link rel="stylesheet" href="{% static 'assets/css/teacher_dashboard.css' %}" />
-  <link rel="stylesheet" href="{% static 'assets/css/reply_score.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/return_score.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/table-return.css' %}" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 </head>
 
 <body>
   <header role="banner">
     <a href="{% url 'teacher_dashboard' %}">
-      <h2>Teacher_dashboard</h2>
+      <h1>Teacherdash_board</h1>
     </a>
+
 
     <ul class="utilities">
       <li class="users"><a href="#">My Account</a></li>
@@ -32,194 +30,29 @@
     </ul>
   </header>
 
+  <nav role="navigation">
+    <ul class="main">
+      <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
+      
+      <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
+      <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
+      <!-- <li class="users"><a href="#">Manage Users</a></li> -->
+    </ul>
+  </nav>
+
   <main role="main">
-    <div class="container">
-      <div class="table-wrapper">
-        <div class="table-title">
-          <div class="row">
-            <div class="col-sm-6">
-              <h2>ให้ <b>คะแนน</b></h2>
-            </div>
-          </div>
-        </div>
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th>
-                <span class="custom-checkbox">
-                  <label for="selectAll"></label>
-                </span>
-              </th>
-              <th>ชื่อ-สกุล</th>
-              <th>อีเมลล์</th>
-              <th>วิชา</th>
-              <th>แบบทดสอบ</th>
-              <th>กรอกคะแนน</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <span class="custom-checkbox">
-                  <input type="checkbox" id="checkbox1" name="options[]" value="1" />
-                  <label for="checkbox1"></label>
-                </span>
-              </td>
-              <td>นาย ศุภกร มาประชุม</td>
-              <td>61030054@kmitl.ac.th</td>
-              <td>คณิตศาสตร์</td>
-              <td>บวก-ลบ จำนวนเต็ม</td>
-              <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
-                    data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="custom-checkbox">
-                  <input type="checkbox" id="checkbox2" name="options[]" value="1" />
-                  <label for="checkbox2"></label>
-                </span>
-              </td>
-              <td>วรรษพร ขุนทร</td>
-              <td>61030050@kmitl.ac.th</td>
-              <td>คณิตศาสตร์</td>
-              <td>บวก-ลบ จำนวนเต็ม</td>
-              <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
-                    data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-              </td>
-            </tr>
+ 
 
-            <tr></tr>
-            <tr></tr>
-          </tbody>
-        </table>
 
-        <div class="clearfix">
-          <!-- <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> -->
-          <ul class="pagination">
-            <li class="page-item disabled"><a href="#">ย้อนกลับ</a></li>
-            <li class="page-item"><a href="#" class="page-link">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item active">
-              <a href="#" class="page-link">3</a>
-            </li>
 
-            <li class="page-item"><a href="#" class="page-link">ถัดไป</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <!-- Edit Modal HTML -->
-    <section id="addEmployeeModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form>
-            <div class="modal-header">
-              <h4 class="modal-title">Add Employee</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <label>Name</label>
-                <input type="text" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" required />
-              </div>
-              <div class="form-group">
-                <label>Address</label>
-                <textarea class="form-control" required></textarea>
-              </div>
-              <div class="form-group">
-                <label>Phone</label>
-                <input type="text" class="form-control" required />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-              <input type="submit" class="btn btn-success" value="Add" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
 
-    <!-- Edit Modal HTML -->
-    <section id="editEmployeeModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form>
-            <div class="modal-header">
-              <h4 class="modal-title">แก้ไขคะแนน</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
 
-              <div class="form-group">
-                <label>คะแนนที่ได้</label>
-                <input type="email" class="form-control" required />
-              </div>
 
-              <div class="form-group">
-                <label>คะแนนเต็ม</label>
-                <input type="text" class="form-control" required />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-              <input type="submit" class="btn btn-info" value="Save" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
 
-    <!-- Delete Modal HTML -->
-    <section id="deleteEmployeeModal" class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form>
-            <div class="modal-header">
-              <h4 class="modal-title">ลบออก</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                &times;
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>คุณแน่ใจหรือไม่ว่าต้องการลบ</p>
-
-            </div>
-            <div class="modal-footer">
-              <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-              <input type="submit" class="btn btn-danger" value="Delete" />
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <script src="{% static 'assets/js/reply_score.js' %}"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-

@@ -105,13 +105,6 @@ def doing_quiz(request):
     return render(request, 'page/student/doing_quiz.html')
 
 
-
-
-
-
-
-
-
 #################################หน้าหลักครู###########################################
 
 def teacher_dashboard(request):
@@ -126,9 +119,7 @@ def create_quiz(request):
 def reply_score(request):
     return render(request, 'page/teacher/reply_score.html')
 
-def all_quiz(request):
-    return render(request, 'page/teacher/all_quiz.html')
-
+ 
 
 
  

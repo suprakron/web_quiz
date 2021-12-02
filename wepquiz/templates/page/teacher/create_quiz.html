@@ -9,37 +9,101 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <link rel="stylesheet" href="{% static 'assets/css/create_quiz.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/teacher_dashboard.css' %}" />
+ 
+  <link rel="stylesheet" href="{% static 'assets/css/create_questions.css' %}" />
 </head>
 
 <body>
   <header role="banner">
     <a href="{% url 'teacher_dashboard' %}">
-      <h1>Teacherdash_board</h1>
+        <h1>Teacherdash_board</h1>
     </a>
-
+   
 
     <ul class="utilities">
-      <li class="users"><a href="#">My Account</a></li>
-      <li class="logout warn"><a href="/logout">Logout</a></li>
+        <li class="users"><a href="#">My Account</a></li>
+        <li class="logout warn"><a href="/logout">Logout</a></li>
     </ul>
-  </header>
+</header>
 
-  <nav role="navigation">
+<nav role="navigation">
     <ul class="main">
-      <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
-      <li class="write"><a href="{% url 'all_quiz' %}">แบบทดสอบ</a></li>
-      <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
-      <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
-      <!-- <li class="users"><a href="#">Manage Users</a></li> -->
+        <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
+
+        <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
+        <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
+        <!-- <li class="users"><a href="#">Manage Users</a></li> -->
     </ul>
-  </nav>
+</nav>
+
 
   <main role="main">
+ 
+    
+      <form>
+        
+        <div class="flex">
+          <fieldset class="type">
+              <label for="type">แนวทางด้านพุทธิพิสัย</label>
+              <select name="type" id="type">
 
-    <section class="panel important">
-
-      <form action="#">
+                <option value="Choice 2">จำ</option>
+                <option value="Choice 2">จำ</option>
+                <option value="Choice 3">เข้าใจ</option>
+                <option value="Choice 4">ประยุกต์ใช้</option>
+                <option value="Choice 5">วิเคราะห์</option>
+                <option value="Choice 6">ประเมินค่า</option>
+                <option value="Choice 7">สร้างสรรค์</option>
+                
+                   
+              </select>
+          </fieldset>
+      </div>
+        <label for="question">Question</label>
+        <input type="text" class="question" id="question">
+  
+  
+        
+        <h2>Options</h2>
+        <div class="flex radio-wrapper">
+            <fieldset class="radio">
+                <label for="answer_1"><img src="{% static 'assets/img/logocreatequiz/radio.png' %}" alt="Radio icon"></label>
+                <input type="text" id="answer_1">
+            </fieldset>
+            <button class="icon-btn" type="button"><img src="{% static 'assets/img/logocreatequiz/gal.png' %}" alt="Trash icon"></button>
+        </div>
+        <div class="flex radio-wrapper">
+            <fieldset class="radio">
+                <label for="answer_1"><img src="{% static 'assets/img/logocreatequiz/radio.png' %}" alt="Radio icon"></label>
+                <input type="text" id="answer_1">
+            </fieldset>
+            <button class="icon-btn" type="button"><img src="{% static 'assets/img/logocreatequiz/trash.png' %}" alt="Trash icon"></button>
+        </div>
+        <div class="flex radio-wrapper">
+            <fieldset class="radio">
+                <label for="answer_1"><img src="{% static 'assets/img/logocreatequiz/radio.png' %}" alt="Radio icon"></label>
+                <input type="text" id="answer_1">
+            </fieldset>
+            <button class="icon-btn" type="button"><img src="{% static 'assets/img/logocreatequiz/trash.png' %}" alt="Trash icon"></button>
+        </div>
+        <div class="flex radio-wrapper">
+            <fieldset class="radio">
+                <label for="answer_1"><img src="{% static 'assets/img/logocreatequiz/radio.png' %}" alt="Radio icon"></label>
+                <input type="text" id="answer_1">
+            </fieldset>
+            <button class="icon-btn" type="button"><img src="{% static 'assets/img/logocreatequiz/trash.png' %}" alt="Trash icon"></button>
+        </div>
+  
+        <button class="icon-btn-alt" type="button"><img src="{% static 'assets/img/logocreatequiz/add.png' %}" alt="Add icon">Add Option</button>
+        
+        <div class="flex cta-wrapper">
+            <button class="cta" type="submit">Save</button>
+            <button class="cta" type="submit">Save and New</button>
+        </div>
+    </form>
+  
+      <!-- <form action="#">
         <div class="twothirds">
           <label for="select-choice">แนวทางด้านพุทธิพิสัย</label>
           <select name="select-choice" id="select-choice">
@@ -84,7 +148,9 @@
             <input type="submit" value="Submit" />
           </div>
         </div>
-      </form>
+      </form> -->
+
+      <section class="panel important"></section>
     </section>
 
   </main>

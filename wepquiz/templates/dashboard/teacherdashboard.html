@@ -7,9 +7,14 @@
     <title>Teacherdash_board</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./style.css" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <link rel="stylesheet" href="{% static 'assets/css/teacher_dashboard.css' %}" />
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/all_quiz.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/addbtn.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/boxq.css' %}" />
 </head>
 
 <body>
@@ -17,8 +22,6 @@
         <a href="{% url 'teacher_dashboard' %}">
             <h1>Teacherdash_board</h1>
         </a>
-       
-
         <ul class="utilities">
             <li class="users"><a href="#">My Account</a></li>
             <li class="logout warn"><a href="/logout">Logout</a></li>
@@ -27,16 +30,33 @@
 
     <nav role="navigation">
         <ul class="main">
-            <!-- <li class="dashboard"><a href="#">Dashboard</a></li> -->
-            <li class="write"><a href="{% url 'all_quiz' %}">แบบทดสอบ</a></li>
             <li class="edit"><a href="{% url 'create_quiz' %}">สร้างแบบทดสอบ</a></li>
-            <li class="comments"><a href="{% url 'reply_score' %}">ตอบกลับคะแนน</a></li>
-            <!-- <li class="users"><a href="#">Manage Users</a></li> -->
+            <li class="comments"><a href="{% url 'reply_score' %}">ประกาศคะแนน</a></li>
         </ul>
     </nav>
 
-    <main role="main">{% block content %} {% endblock %}</main>
+    <main role="main">
+        <section>
+            <button type="button" class="right">
+                <img src="{% static 'assets/img/logocreatequiz/add.png' %}" alt="Add icon">
+            </button>
+        </section>
+        <section class="box">
+            <div class="boxscore">
+                <div class="row">
+                    <div class="column">
+                        <label align="left">
+                            <h1 class="text"> วิชา คณิตศาสตร์</h1>
+                            <h2 class="text">แบบทดสอบ ชื่อ จำนวนนับ</h2><br>
 
+                            <h3 class="textt">มอบหมายเมื่อ : 27 / 11 / 2564</h3>
+                            <h3 class="textt">ครบกำหนดส่ง : 28 / 11 / 2564</h3>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 
