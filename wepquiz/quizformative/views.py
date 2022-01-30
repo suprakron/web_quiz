@@ -1,8 +1,14 @@
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,reverse
 from django.contrib.auth.models import User, auth, Group
 from django.contrib import messages
 from django.http import JsonResponse
+
+from django.views.decorators.csrf import csrf_exempt
+# from .models import QuizModel
+import json
+import datetime
+from django.http import HttpResponseBadRequest
 # Create your views here.
 
 
@@ -115,6 +121,35 @@ def teacher_dashboard(request):
 
 def create_quiz(request):
     return render(request, 'page/teacher/create_quiz.html')
+
+
+
+# @csrf_exempt
+# def quiz_add_view(request):
+#     if not request.user.is_authenticated: return redirect('/')
+#     if request.is_ajax():
+#         try:
+#             data = request.body.decode('utf-8')
+#             QuizModel().question_serialize(data) #try to serialize to check if JSON is okay
+#             json_data = json.loads(data)
+#             quiz = QuizModel.objects.create(author=request.user, questions=json_data,
+#                                         date_created=datetime.datetime.now().strftime('%Y-%m-%d'))
+#         except:
+#             return HttpResponseBadRequest(
+#                 json.dumps({'message': 'Quiz data is incorrect, please fill all fields'}),
+#                 content_type="application/json")
+#         return HttpResponse(json.dumps({'url': reverse('quiz', kwargs={'pk':quiz.pk})}), content_type="application/json")
+#     return render(request, 'create_quiz.html')
+
+
+
+
+
+
+
+
+
+
 
 def reply_score(request):
     return render(request, 'page/teacher/reply_score.html')
