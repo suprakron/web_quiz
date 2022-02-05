@@ -1,21 +1,28 @@
+from multiprocessing import context
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render, redirect,reverse
+from django.shortcuts import render, redirect, Http404, reverse, HttpResponse
 from django.contrib.auth.models import User, auth, Group
 from django.contrib import messages
 from django.http import JsonResponse
 
 from django.views.decorators.csrf import csrf_exempt
-# from .models import QuizModel
+ 
+
 import json
 import datetime
 from django.http import HttpResponseBadRequest
+
+from .forms import QuestionForms
+from .models import  Question
+ 
 # Create your views here.
+ 
 
 
 def index(request):
     return render(request, 'page/index.html')
 
-
+ 
 def loginform(request):
     return render(request, 'page/loginform.html')
 
@@ -119,45 +126,39 @@ def teacher_dashboard(request):
     else:
         return render(request, 'dashboard/teacherdashboard.html')
 
+ 
+
 def create_quiz(request):
-    return render(request, 'page/teacher/create_quiz.html')
+
+    if request.method == 'POST':
+        form = QuestionForms(request.POST)
+
+        if form.is_valid():
+            subject = form.cleaned_data["subject_name"]
+            quiz = form.cleaned_data["quiz_name"]
+            detail = form.cleaned_data["detail"]
+            answer_texts = form.cleaned_data["answer_text_correctness"]
+            choice1_answer = form.cleaned_data["choice1_correctness"]
+            choice2_answer = form.cleaned_data["choice2_correctness"]
+            choice3_answer = form.cleaned_data["choice3_correctness"]
+            choice4_answer = form.cleaned_data["choice4_correctness"]
+            score_quiz = form.cleaned_data["score"]
+
+            return HttpResponseRedirect(reverse('teacher_dashboard'))
+    else:
+        form = QuestionForms()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'page/teacher/create_quiz.html',context) 
 
 
-
-# @csrf_exempt
-# def quiz_add_view(request):
-#     if not request.user.is_authenticated: return redirect('/')
-#     if request.is_ajax():
-#         try:
-#             data = request.body.decode('utf-8')
-#             QuizModel().question_serialize(data) #try to serialize to check if JSON is okay
-#             json_data = json.loads(data)
-#             quiz = QuizModel.objects.create(author=request.user, questions=json_data,
-#                                         date_created=datetime.datetime.now().strftime('%Y-%m-%d'))
-#         except:
-#             return HttpResponseBadRequest(
-#                 json.dumps({'message': 'Quiz data is incorrect, please fill all fields'}),
-#                 content_type="application/json")
-#         return HttpResponse(json.dumps({'url': reverse('quiz', kwargs={'pk':quiz.pk})}), content_type="application/json")
-#     return render(request, 'create_quiz.html')
-
-
-
-
-
-
-
-
-
-
-
+ 
 def reply_score(request):
     return render(request, 'page/teacher/reply_score.html')
 
- 
 
-
- 
 def logout_view(request):
     auth.logout(request)
     return redirect('/loginForm')

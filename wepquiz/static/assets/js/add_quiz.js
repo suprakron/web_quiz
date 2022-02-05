@@ -37,12 +37,14 @@ class NewQuiz {
 
     add_option(idx) {
         let HTML_code = `<div class="input-group mb-3">
+                       
                               <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">${this.quiz[idx]["choices"].length + 1
             }</span>
+         
                               </div>
                               <input type="text" id="${idx}-${this.quiz[idx]["choices"].length
-            }" class="form-control" placeholder="Enter your option" aria-describedby="basic-addon1" onchange="page.change_status(${idx})">
+            }" class="form-control" placeholder="ใส่ตัวเลือกของคุณ" aria-describedby="basic-addon1" onchange="page.change_status(${idx})">
                               <div class="input-group-append">
                                   <div class="input-group-text">
                                     <input type="radio" name="answer-${idx}" class="" aria-label="Correct answer" value="${this.quiz[idx]["choices"].length
@@ -58,36 +60,58 @@ class NewQuiz {
 
     generate_text_question() {
         return `<div class="card" style="margin-top: 32px">
-                    <div class="card-header">คำถาม ${this.question_count + 1
-            } <span id="save-${this.question_count}"> </span></div>
-                    <div class="card-body">
-                        <textarea class="form-control" rows="5" id="question-${this.question_count
-            }" placeholder="Enter your question" onchange="page.change_status(${this.question_count
-            })"></textarea>
-                        <input type='text' id="answer-${this.question_count
-            }" placeholder="Enter right answer for the question" class="form-control question-input" onchange="page.change_status(${this.question_count
-            })">
-                        <button type="button" class="btn btn-primary" onclick="page.save_text_question(${this.question_count
-            })">บันทึก</button>
+                        <div class="card-header">
+                          
+                                
+                            <div class="row">
+                            <div class="col-8"> คำถามที่ ${this.question_count + 1} <span id="save-${this.question_count}"> </span></div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                     <label for="exampleInputEmail1">คะแนน</label>
+                                     <input type="text" class="form-control" value="1"  >
+                          </div>
+                          </div>
+                        </div>
                     </div>
-                </div>`;
+                       
+                        <div class="card-body">
+                            <textarea class="form-control" rows="5" id="question-${this.question_count
+            }" placeholder="ใส่คำถามของคุณ" onchange="page.change_status(${this.question_count
+            })"></textarea>
+                            <input type='text' id="answer-${this.question_count
+            }" placeholder="ใส่คำตอบที่ถูกต้องสำหรับคำถาม" class="form-control question-input" onchange="page.change_status(${this.question_count
+            })">
+                            <button type="button" class="btn btn-primary" onclick="page.save_text_question(${this.question_count
+            })">บันทึก</button>
+                        </div>
+                    </div>`;
     }
 
     generate_choice_question() {
         return `<div class="card" style="margin-top: 32px">
-                    <div class="card-header">คำถามที่ ${this.question_count + 1
-            } <span id="save-${this.question_count}"> </span></div>
-                    <div class="card-body">
-                        <textarea class="form-control question-input" rows="5" id="question-${this.question_count
-            }" placeholder="ใส่คำถามของคุณ" onchange="page.change_status(${this.question_count
-            })"></textarea>
-                        <div id="options-${this.question_count}"></div>
-                        <button class="btn btn-primary" onclick="page.add_option(${this.question_count
-            })">Add Option</button>
-                        <button class="btn btn-primary" onclick="page.save_choice_question(${this.question_count
-            })">Save</button>
+                        <div class="card-header">
+                        <div class="row">
+                        <div class="col-8">   คำถามที่  ${this.question_count + 1 } <span id="save-${this.question_count }"> </span></div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                 <label for="exampleInputEmail1">คะแนน</label>
+                                 <input type="text" class="form-control" value="1"  >
+                      </div>
+                      </div>
                     </div>
-                </div>`;
+                    
+                        <div class="card-body">
+                            <textarea class="form-control question-input" rows="5" id="question-${this.question_count
+            }" placeholder="ใส่คำถามของคุณ" onchange="page.change_status(${this.question_count
+            }" placeholder="" onchange="page.change_status(${this.question_count
+            })"></textarea>
+                            <div id="options-${this.question_count}"></div>
+                            <button class="btn btn-primary" onclick="page.add_option(${this.question_count
+            })">เพิ่มตัวเลือก</button>
+                            <button class="btn btn-primary" onclick="page.save_choice_question(${this.question_count
+            })">บันทึก</button>
+                        </div>
+                    </div>`;
     }
 
     add_question() {

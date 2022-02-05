@@ -15,6 +15,7 @@ urlpatterns = [
 
     path('teacher/',views.teacher_dashboard, name="teacher_dashboard"),                         #หน้าหลักของครู
     path('create_quiz/',views.create_quiz, name="create_quiz"),                                 #หน้าสร้างแบบทดสอบ
+    
     path('reply_score/', views.reply_score, name="reply_score"),                                #หน้าตอบกลับคะแนนนักเรียนของครู
    
 

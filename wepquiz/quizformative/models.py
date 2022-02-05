@@ -1,26 +1,29 @@
 from django.db import models
-from enum import Enum
-import json
-
-# Create your models here.
-
-class QuestionType(Enum):
-    TEXT = '0'
-    CHOICE = '1'
-
-class BadJSON(Exception): pass
-
-class Question:
-    def __init__(self, question, answer, q_type, choices=[]):
-        self.question = question
-        self.answer = answer
-        self.q_type = q_type
-        self.choices = choices
+ 
+ 
+class Quiz(models.Model):
+    subject = models.CharField(max_length=100)
+    quiz_title = models.TextField(max_length=100)
+    detail = models.TextField(max_length=100)
 
     def __str__(self):
-        outline = '<Question Object>\n'
-        outline += f' - question: {self.question}\n'
-        outline += f' - answer: {self.answer}\n'
-        outline += f' - q_type: {self.q_type}\n'
-        outline += f' - choices: {self.choices}\n'
-        return outline
+        return self.subject
+
+class Question(models.Model):
+    quiz_title = models.ForeignKey(Quiz,on_delete=models.CASCADE)
+    quiz_text = models.TextField(max_length=100)
+    quizanswer_text = models.TextField(max_length=100)
+    quiz_multiple = models.TextField(max_length=100)
+    options_one = models.CharField(max_length=100)
+    options_two = models.CharField(max_length=100)
+    options_three = models.CharField(max_length=100)
+    options_four = models.CharField(max_length=100)
+    score_quiz = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.quiz_text
+    
+
+
+
+ 
