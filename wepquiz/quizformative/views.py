@@ -12,8 +12,8 @@ import json
 import datetime
 from django.http import HttpResponseBadRequest
 
-from .forms import QuestionForms
-from .models import  Question
+# from .forms import QuestionForms
+# from .models import  Question
  
 # Create your views here.
  
@@ -129,29 +129,8 @@ def teacher_dashboard(request):
  
 
 def create_quiz(request):
-
-    if request.method == 'POST':
-        form = QuestionForms(request.POST)
-
-        if form.is_valid():
-            subject = form.cleaned_data["subject_name"]
-            quiz = form.cleaned_data["quiz_name"]
-            detail = form.cleaned_data["detail"]
-            answer_texts = form.cleaned_data["answer_text_correctness"]
-            choice1_answer = form.cleaned_data["choice1_correctness"]
-            choice2_answer = form.cleaned_data["choice2_correctness"]
-            choice3_answer = form.cleaned_data["choice3_correctness"]
-            choice4_answer = form.cleaned_data["choice4_correctness"]
-            score_quiz = form.cleaned_data["score"]
-
-            return HttpResponseRedirect(reverse('teacher_dashboard'))
-    else:
-        form = QuestionForms()
-
-    context = {
-        'form': form,
-    }
-    return render(request, 'page/teacher/create_quiz.html',context) 
+    return render(request, 'page/teacher/create_quiz.html') 
+ 
 
 
  
