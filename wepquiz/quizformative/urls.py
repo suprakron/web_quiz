@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from . import views
 
 
@@ -15,17 +16,32 @@ urlpatterns = [
 
     path('teacher/',views.teacher_dashboard, name="teacher_dashboard"),                         #หน้าหลักของครู
     path('create_quiz/',views.create_quiz, name="create_quiz"),                                 #หน้าสร้างแบบทดสอบ
-    
     path('reply_score/', views.reply_score, name="reply_score"),                                #หน้าตอบกลับคะแนนนักเรียนของครู
    
-
-
 
     path('student/',views.student_dashboard, name="student_dashboard"),       #หน้าหลักของนักเรียน
     path('view_score/',views.view_scores, name="viewscore"),                  #หน้าดูคะแนนแบบทดสอบของนักเรียน
     path('doing_quiz/',views.doing_quiz, name="doing_quiz"),                  #หน้าทำแบบทดสอบของนักเรียน
   
 
-    path('logout/',views.logout_view ,name="logout")
+    path('logout/',views.logout_view ,name="logout"),
+
+    path('', views.QuizListView , name='quiz-list'),
+    path('quiz/<int:pk>/',views.QuizDetailView , name='quiz-detail'),
+    path('quiz/<int:pk>/update/',views.updateQuiz, name='quiz-update'),
+    path('quiz/<int:pk>/delete/', views.QuizDeleteView , name='quiz-delete'),
+    path('quiz/new/',views.newQuiz, name='new-quiz'),
+    path('quiz/<int:pk>/duplicate/',views.quizDuplicate, name='quiz-duplicate'),
+    path('quiz/<int:pk>/result/',views.quizResult, name='quiz-result'),
+
+
+
+
+
+
+
+
+
+
 ]
  

@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'users.apps.UsersConfig'
     # 'quizformative.apps.QuizformativeConfig',
-    'quizformative',
+
+    'quizformative.apps.QuizformativeConfig',
+     'crispy_forms',
 ]
 
 MIDDLEWARE = [
