@@ -5,9 +5,9 @@ from datetime import datetime, timedelta
 import pytz
 
 
+
 class Quiz(models.Model):
-    maker = models.ForeignKey(settings.AUTH_USER_MODEL,
-                              on_delete=models.CASCADE)
+    maker = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     name = models.CharField(max_length=500)
     startDateTime = models.DateTimeField(null=True)
     timeLimit = models.IntegerField(null=True)
@@ -54,6 +54,7 @@ class Quiz(models.Model):
     @property
     def totalPoints(self):
         return sum(question.point for question in self.question_set.all())
+
 
 
 class QuestionManager(models.Manager):

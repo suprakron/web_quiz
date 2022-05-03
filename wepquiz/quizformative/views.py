@@ -27,6 +27,7 @@ from quizformative.utils.duplicateQuiz import duplicateQuiz
  
  
 # Create your views here.
+
 def index(request):
     return render(request, 'page/index.html')
 
@@ -89,7 +90,7 @@ def registerteacher(request):
 
 
 def login(request):
-    if request.method == 'POST':
+    if request.method == 'POST': 
         email = request.POST.get('email')
         password = request.POST.get('password')
         if  User.objects.filter(email=email).exists():
@@ -144,6 +145,9 @@ def reply_score(request):
 def logout_view(request):
     auth.logout(request)
     return redirect('/loginForm')
+
+
+
 
 #################################ส่วนของระบบแบบทดสอบ###########################################
 
